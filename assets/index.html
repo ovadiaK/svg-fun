@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<main>
+
+</main>
+<svg
+    width="200" height="200" viewBox="-100 -100 300 300" >
+<polygon points="0,0 80,120 -80,120" fill="#234236" />
+<polygon points="0,-40 60,60 -60,60" fill="#0C5C4C" />
+<polygon points="0,-80 40,0 -40,0" fill="#38755B" />
+<rect x="-20" y="120" width="40" height="30" fill="brown" />
+</svg>
+  <svg width="200" height="200" viewBox="-100 -100 300 300">
+    <polygon points="0,0 80,120 -80,120" fill="#234236" />
+    <polygon points="0,-40 60,60 -60,60" fill="#0C5C4C" />
+    <polygon points="0,-80 40,0 -40,0" fill="#38755B" />
+    <polygon points="-20,150 -20,120 20,120 20,150  " fill="brown" />
+  </svg>
+ <svg width="200" height="200" viewBox="-100 -100 200 200">
+    <circle cx="0" cy="20" r="70" fill="#D1495B" />
+
+    <circle
+      cx="0"
+      cy="-75"
+      r="12"
+      fill="none"
+      stroke="#F79257"
+      stroke-width="2"
+    />
+
+    <rect x="-17.5" y="-65" width="35" height="20" fill="#F79257" />
+  </svg>
+  <svg width="200" height="200" viewBox=" 0 0 300 300">
+  <rect x="20" y="20" width="200" height="200" fill="brown" rx="12" />
+  </svg>
+  <svg class="gingerbread" width="200" height="200" viewBox="-100 -100 200 200">
+  <circle class="body" cx="0" cy="-50" r="30" />
+
+  <circle class="eye" cx="-12" cy="-55" r="3" />
+  <circle class="eye" cx="12" cy="-55" r="3" />
+  <rect class="mouth" x="-10" y="-40" width="20" height="5" rx="2" />
+
+  <line class="limb" x1="-40" y1="-10" x2="40" y2="-10" />
+  <line class="limb" x1="-25" y1="50" x2="0" y2="-15" />
+  <line class="limb" x1="25" y1="50" x2="0" y2="-15" />
+
+  <circle class="button" cx="0" cy="-10" r="5" />
+  <circle class="button" cx="0" cy="10" r="5" />
+</svg>
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+  <defs>
+    <path
+      id="branch"
+      d="
+        M 0 0 L 0 -90
+        M 0 -20 L 20 -34
+        M 0 -20 L -20 -34
+        M 0 -40 L 20 -54
+        M 0 -40 L -20 -54
+        M 0 -60 L 20 -74
+        M 0 -60 L -20 -74"
+      stroke="#E5C39C"
+      stroke-width="5"
+    />
+  </defs>
+
+  <use href="#branch" />
+  <use href="#branch" transform="rotate(60)" />
+  <use href="#branch" transform="rotate(120)" />
+  <use href="#branch" transform="rotate(180)" />
+  <use href="#branch" transform="rotate(240)" />
+  <use href="#branch" transform="rotate(300)" />
+</svg>
+<svg width="200" height="200" viewBox="-100 -100 200 200">
+  <g stroke="black" stroke-width="2">
+    <circle cx="0" cy="-45" r="7" fill="#4F6D7A" />
+    <circle cx="0" cy="50" r="10" fill="#F79257" />
+    <path
+      d="
+        M -50 40
+        L -50 50
+        L 50 50
+        L 50 40
+        Q 40 40 40 10
+        C 40 -60 -40 -60 -40 10   
+        Q -40 40 -50 40"
+      fill="#FDEA96"
+    />
+ </g>
+</svg>
+
+<script>
+let relativeSize = 4
+const width = 200;
+const height =  200;
+const viewx = relativeSize * 100;
+const viewy = relativeSize * 100;
+let size = (x) => x * relativeSize;
+let circle  = (x,y,s,color) =>`<circle cx=${size(x)} cy=${size(y)} r=${size(s)} fill="${color}"/>`;
+function makeSVG(...figures){
+console.log(figures);
+  let text = `<svg width="${width}" height="${height}" viewBox="0 0 ${viewx} ${viewy}">${figures.join('')}</svg>`;
+  console.log(text);
+    return text;
+}
+
+document.onload = start();
+function start(){
+let main = document.querySelector('main');
+main.innerHTML = makeSVG(circle(20,20,20,"pink"),circle(50,50,10,"#F79257"),circle(10,10,10,"#0C5C4C"));
+
+console.log('hello');
+}
+</script>
+</html>
