@@ -55,8 +55,8 @@ makeEars = (d, input) => {
 }
 makeEyes = (d,input) => {
     let eyes = `
-    <circle cx="${d(0.5)}" cy="${d(0.5)}" r="${size(input.size)}" fill="${input.color}"/>
-    <circle cx="-${d(0.5)}" cy="${d(0.5)}" r="${size(input.size)}" fill="${input.color}"/>`;
+    <circle cx="${d(0.4)}" cy="${d(0.5)}" r="${size(input.size)}" fill="${input.color}"/>
+    <circle cx="${d(-0.4)}" cy="${d(0.5)}" r="${size(input.size)}" fill="${input.color}"/>`;
     return eyes;
 }
 makeNose = (d,input) => {
